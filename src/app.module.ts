@@ -10,7 +10,9 @@ import { CoursesModule } from './courses/courses.module';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'postgres',
+      username: 'username',
+      password: 'password',
       port: 5432,
       database: 'automationu',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
