@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CoursesModule } from './courses/courses.module';
+import { CoursesModule } from '../courses/courses.module';
 
 @Module({
   imports: [
