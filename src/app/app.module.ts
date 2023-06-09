@@ -4,10 +4,14 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CoursesModule } from '../courses/courses.module';
+import { configuration } from '../config/configuration';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      envFilePath: `${process.cwd()}/config/env/${process.env.NODE_ENV}.env`,
+      load: [configuration],
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'postgres',
