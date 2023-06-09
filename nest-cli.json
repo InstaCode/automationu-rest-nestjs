@@ -11,6 +11,9 @@
           "introspectComments": true
         }
       }
+    ],
+    "assets": [
+      "**/*.json"
     ]
   }
 }

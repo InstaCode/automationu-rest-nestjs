@@ -11,8 +11,6 @@ import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { ApiTags, ApiResponse, ApiParam, ApiBody } from '@nestjs/swagger';
-import { DataLoaderService } from './providers/dataloaderservice';
-import { CoursesModule } from './courses.module';
 
 @Controller('courses')
 @ApiTags('Courses')
@@ -52,9 +50,5 @@ export class CoursesController {
   @ApiParam({ name: 'id', type: 'string', description: 'Course ID' })
   remove(@Param('id') id: string) {
     return this.coursesService.remove(+id);
-  }
-  @Get()
-  async init() {
-    await DataLoaderService.prototype.loadJsonData();
   }
 }

@@ -15,7 +15,7 @@ export class DataLoaderService {
   async loadJsonData() {
     const filePath = path.resolve(
       __dirname,
-      'data/courses-clean-improved.json',
+      '../data/courses-clean-improved.json',
     );
     const jsonString = await fs.promises.readFile(filePath, 'utf-8');
     const data = JSON.parse(jsonString);
