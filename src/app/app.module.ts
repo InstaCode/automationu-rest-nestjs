@@ -9,16 +9,18 @@ import { configuration } from '../config/configuration';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `${process.cwd()}/config/env/${process.env.NODE_ENV}.env`,
+      envFilePath: `${process.cwd()}/config/environments/${
+        process.env.NODE_ENV
+      }.env`,
       load: [configuration],
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'postgres',
-      username: 'username',
-      password: 'password',
-      port: 5432,
-      database: 'automationu',
+      host: configuration().database.host,
+      username: configuration().postgres.username,
+      password: configuration().postgres.password,
+      port: parseInt(configuration().database.port),
+      database: configuration().postgres.database,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

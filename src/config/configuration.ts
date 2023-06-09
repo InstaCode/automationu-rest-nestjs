@@ -8,7 +8,7 @@ export const configuration = () => ({
     port: process.env.DB_PORT,
   },
   postgres: {
-    dbName: process.env.POSTGRES_DB,
+    database: process.env.POSTGRES_DB,
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
   },
