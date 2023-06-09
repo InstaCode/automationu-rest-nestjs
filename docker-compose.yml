@@ -7,7 +7,7 @@ services:
       # Only will build development stage from our dockerfile
       target: development
     env_file:
-      - .env
+      - test/.env
     volumes:
       - .:/usr/src/app
     # Run in dev Mode: npm run start:dev

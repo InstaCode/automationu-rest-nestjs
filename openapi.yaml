@@ -1,0 +1,190 @@
+openapi: 3.0.0
+paths:
+  /:
+    get:
+      operationId: getHello
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: string
+  /courses:
+    post:
+      operationId: create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCourseDto"
+      responses:
+        "201":
+          description: Creates a new course
+      tags:
+        - Courses
+    get:
+      operationId: findAll
+      parameters: []
+      responses:
+        "200":
+          description: Retrieves all courses
+      tags:
+        - Courses
+  "/courses/{id}":
+    get:
+      operationId: findOne
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Course ID
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Retrieves a course by ID
+      tags:
+        - Courses
+    patch:
+      operationId: update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Course ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateCourseDto"
+      responses:
+        "200":
+          description: Updates a course by ID
+      tags:
+        - Courses
+    delete:
+      operationId: remove
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Course ID
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Deletes a course by ID
+      tags:
+        - Courses
+info:
+  title: AutomationU REST API
+  description: ""
+  version: 1.0.0
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    CreateCourseDto:
+      type: object
+      properties:
+        subject:
+          type: string
+        courseCode:
+          type: string
+        section:
+          type: string
+        title:
+          type: string
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        time:
+          type: string
+        credits:
+          type: number
+        status:
+          type: string
+        instructor:
+          type: string
+        deliveryMethod:
+          type: string
+        buildingRoom:
+          type: string
+        classSize:
+          type: number
+        enrolled:
+          type: number
+        tuitionResident:
+          type: number
+        tuitionNonResident:
+          type: number
+        courseFees:
+          type: number
+      required:
+        - subject
+        - courseCode
+        - section
+        - title
+        - startDate
+        - endDate
+        - time
+        - credits
+        - status
+        - instructor
+        - deliveryMethod
+        - buildingRoom
+        - classSize
+        - enrolled
+        - tuitionResident
+        - tuitionNonResident
+        - courseFees
+    UpdateCourseDto:
+      type: object
+      properties:
+        subject:
+          type: string
+        courseCode:
+          type: string
+        section:
+          type: string
+        title:
+          type: string
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        time:
+          type: string
+        credits:
+          type: number
+        status:
+          type: string
+        instructor:
+          type: string
+        deliveryMethod:
+          type: string
+        buildingRoom:
+          type: string
+        classSize:
+          type: number
+        enrolled:
+          type: number
+        tuitionResident:
+          type: number
+        tuitionNonResident:
+          type: number
+        courseFees:
+          type: number
