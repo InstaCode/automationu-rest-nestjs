@@ -37,5 +37,5 @@ services:
 
 volumes:
   docker-nest-postgres:
-  redis:
-    driver: local
+#  redis:
+#    driver: local
