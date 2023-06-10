@@ -5,54 +5,54 @@ export class Course extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   subject: string;
 
-  @Column()
+  @Column({ nullable: true })
   courseCode: string;
 
-  @Column()
+  @Column({ nullable: true })
   section: string;
 
-  @Column()
+  @Column({ nullable: true })
   title: string;
 
-  @Column()
+  @Column({ nullable: true })
   startDate: Date;
 
-  @Column()
+  @Column({ nullable: true })
   endDate: Date;
 
-  @Column()
+  @Column({ nullable: true })
   time: string;
 
-  @Column()
+  @Column({ nullable: true })
   credits: number;
 
-  @Column()
+  @Column({ nullable: true })
   status: string;
 
-  @Column()
+  @Column({ nullable: true })
   instructor: string;
 
-  @Column()
+  @Column({ nullable: true })
   deliveryMethod: string;
 
-  @Column()
+  @Column({ nullable: true })
   buildingRoom: string;
 
-  @Column()
+  @Column({ nullable: true })
   classSize: number;
 
-  @Column()
+  @Column({ nullable: true })
   enrolled: number;
 
-  @Column()
+  @Column({ nullable: true })
   tuitionResident: number;
 
-  @Column()
+  @Column({ nullable: true })
   tuitionNonResident: number;
 
-  @Column()
+  @Column({ nullable: true })
   courseFees: number;
 }
